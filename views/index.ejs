@@ -1,11 +1,22 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App</title>
+    <title>Register</title>
 </head>
 <body>
-    <h1>Welcome to My App</h1>
+    
+    <div> <a href="/auth/profile">profile</a> </div>
+    <div> <a href="/auth/logout">logout</a> </div>
+
+    <form action="/auth/register" method="post">
+        <div><input type="text" placeholder="enter name" name="name"></div>
+        <div><input type="text" placeholder="email" name="email"></div>
+        <div><input type="text" placeholder="passward"  name="passward" ></div>
+        <div><input type="submit"></div>
+        <a href="/login">login</a>
+       
+        
+    </form>
 </body>
 </html>
