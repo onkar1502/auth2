@@ -1,7 +1,7 @@
 const userModel=require('../model/user');
 const bcrypt=require('bcrypt');
 
-const generateToken=require('../utility/generateToken');
+const generateToken=require('../utility/generateToken.js');
 
 
 module.exports.registeruser=async (req,res)=>{

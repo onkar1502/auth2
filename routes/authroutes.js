@@ -7,3 +7,5 @@ router.post('/register',registeruser);
 router.post('/login',loginuser);
 router.get('/logout',logoutuser);
 router.get('/profile',protect,profileuser);
+
+module.exports=router;
