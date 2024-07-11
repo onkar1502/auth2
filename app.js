@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI ||3000);
+mongoose.connect(process.env.MONGODB_URI || 3000);
 
 // Set up EJS
 app.set('view engine', 'ejs');
