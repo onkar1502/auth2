@@ -1,9 +1,17 @@
 const express = require('express');
-const mongoose = require('mongoose');
+
 const app = express();
+const connectToDB=require('./config/mongoose');
+
+const authroutes=require('./routes/authroutes');
+const cookieParser=require('cookie-parser');
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(cookieParser());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 3000);
+connectToDB();
 
 // Set up EJS
 app.set('view engine', 'ejs');
@@ -12,9 +20,21 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // Routes
-app.get('/', (req, res) => {
-  res.render('index');
+app.get("/" ,function(req,res){
+    res.render("index");
 });
+
+app.get("/login",function(req,res){
+    res.render("login");
+});
+
+
+
+app.use('/auth',authroutes);
+
+
+
+
 
 // Start Server
 const PORT = process.env.PORT || 3000;
